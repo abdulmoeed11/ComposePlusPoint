@@ -25,6 +25,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mqasoft.composepluspoint.R
+import com.mqasoft.composepluspoint.presentation.ui.BottomScreenUI
+import com.mqasoft.composepluspoint.presentation.ui.TransactionCardUI
 
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
@@ -43,7 +45,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             Row (
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(20.dp),
+                    .padding(horizontal = 20.dp),
                 verticalAlignment = Alignment.CenterVertically
             ){
                 Text(
@@ -80,9 +82,32 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                     )
                     .padding(horizontal = 5.dp))
                 Text(text = "ABC Market", modifier = Modifier.padding(horizontal = 5.dp),
-                style = TextStyle.Default.copy(
-                    color = Color.White
-                ))
+                    style = TextStyle.Default.copy(
+                        color = Color.White
+                    ))
+            }
+            Row(modifier = Modifier.padding(20.dp)) {
+                TransactionCardUI(text = "Wallet Transaction", id = R.drawable.image_wallet, onClick = {} )
+                TransactionCardUI(text = "Ticket Sales", id = R.drawable.image_qrticket, onClick = {})
+                TransactionCardUI(text = "Inspection Sale", id = R.drawable.image_inspection, onClick = {})
+            }
+            BottomScreenUI {
+                Box(modifier = Modifier
+                    .fillMaxWidth()
+                    .background(color = Color.White, shape = RoundedCornerShape(9.dp))
+                    .padding(10.dp), contentAlignment = Alignment.CenterStart) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Box(modifier = Modifier.padding(end = 10.dp).size(27.dp)){
+                            Image(modifier= Modifier.fillMaxSize(), painter = painterResource(id = R.drawable.image_inspection), contentDescription = null)
+                        }
+                        Column() {
+                            Text(text = "Harika", style = TextStyle.Default.copy(fontSize = 20.sp, fontWeight = FontWeight.Bold))
+                            Text(text = "fjkdfkjkfnaslkdnaskdnasjkjkasndkjasndkasn", style = TextStyle.Default.copy(color = Color(0xff3e6275)))
+                        }
+                    }
+
+
+                }
             }
         }
     }
