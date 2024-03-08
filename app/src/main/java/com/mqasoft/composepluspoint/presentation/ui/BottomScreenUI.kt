@@ -22,7 +22,7 @@ fun BottomScreenUI(
         color = Color(0xFFEEF3F6), shadowElevation = 8.dp,
 
         ) {
-        Column(modifier = Modifier.fillMaxSize().padding(20.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+        Column(modifier = Modifier.fillMaxSize().padding(20.dp)) {
             content()
         }
     }
