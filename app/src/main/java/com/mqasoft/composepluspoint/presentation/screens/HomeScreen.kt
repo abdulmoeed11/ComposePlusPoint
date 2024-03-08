@@ -8,9 +8,9 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -26,6 +26,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mqasoft.composepluspoint.R
 import com.mqasoft.composepluspoint.presentation.ui.BottomScreenUI
+import com.mqasoft.composepluspoint.presentation.ui.CardUI
+import com.mqasoft.composepluspoint.presentation.ui.PaymentOptionUI
 import com.mqasoft.composepluspoint.presentation.ui.TransactionCardUI
 
 @Composable
@@ -56,7 +58,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                         fontWeight = FontWeight.Bold
                     )
                 )
-                Spacer(modifier = Modifier.width(70.dp))
+                Spacer(modifier = Modifier.weight(1f))
                 Image(
                     modifier = Modifier
                         .padding(5.dp)
@@ -97,15 +99,31 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                     .background(color = Color.White, shape = RoundedCornerShape(9.dp))
                     .padding(10.dp), contentAlignment = Alignment.CenterStart) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        Box(modifier = Modifier.padding(end = 10.dp).size(27.dp)){
-                            Image(modifier= Modifier.fillMaxSize(), painter = painterResource(id = R.drawable.image_inspection), contentDescription = null)
+                        Box(modifier = Modifier
+                            .padding(end = 10.dp)
+                            .size(27.dp)){
+                            Image(modifier= Modifier.fillMaxSize(), painter = painterResource(id = R.drawable.image_harika), contentDescription = null)
                         }
                         Column() {
-                            Text(text = "Harika", style = TextStyle.Default.copy(fontSize = 20.sp, fontWeight = FontWeight.Bold))
-                            Text(text = "fjkdfkjkfnaslkdnaskdnasjkjkasndkjasndkasn", style = TextStyle.Default.copy(color = Color(0xff3e6275)))
+                            Text(text = "Harika", style = TextStyle.Default.copy(fontSize = 16.sp, fontWeight = FontWeight.Bold))
+                            Text(text = "This a testing and checking if this works  afdsfsdfdsfdsfdsfds", style = TextStyle.Default.copy(color = Color(0xff3e6275)))
                         }
                     }
-
+                }
+                Row(modifier = Modifier.padding(vertical = 10.dp), verticalAlignment = Alignment.Bottom) {
+                    Text(text = "Payments", style = TextStyle.Default.copy(
+                        color = Color(0xff979db1), fontSize = 18.sp
+                    ))
+                    Spacer(modifier = Modifier.weight(1f))
+                    Text(text = "Open(10)", style = TextStyle.Default.copy(fontWeight = FontWeight.Bold, fontSize = 12.sp))
+                }
+                PaymentOptionUI(id = R.drawable.image_payment, text = "Bill Payment") {
+                    
+                }
+                PaymentOptionUI(id = R.drawable.image_debt, text = "Debt Payment") {
+                    
+                }
+                PaymentOptionUI(id = R.drawable.image_kontor, text = "Update Counter") {
 
                 }
             }
