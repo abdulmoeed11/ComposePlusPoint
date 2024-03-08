@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -40,16 +41,18 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                     .padding(top = 100.dp),
                 )
             BottomScreenUI {
-                TextFieldUI(text = "", onTextChanged = {}, hint = "username")
-                TextFieldUI(text = "", onTextChanged = {}, hint = "password" )
-                LoginButtonUI(buttonText = "Login") {
-                }
-                Text(text = "Forgot your password?",
-                    modifier = Modifier.padding(20.dp),
-                    style = TextStyle.Default.copy(fontWeight = FontWeight.Bold)
-                )
-                RegisterButtonUI(buttonText = "Register") {
-                    
+                Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+                    TextFieldUI(text = "", onTextChanged = {}, hint = "username")
+                    TextFieldUI(text = "", onTextChanged = {}, hint = "password" )
+                    LoginButtonUI(buttonText = "Login") {
+                    }
+                    Text(text = "Forgot your password?",
+                        modifier = Modifier.padding(20.dp),
+                        style = TextStyle.Default.copy(fontWeight = FontWeight.Bold)
+                    )
+                    RegisterButtonUI(buttonText = "Register") {
+
+                    }
                 }
             }
 
