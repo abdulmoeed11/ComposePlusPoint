@@ -56,7 +56,7 @@ fun NfcScreen(modifier: Modifier = Modifier) {
                         modifier = Modifier.padding(),
                         text = "Wallet Transactions",
                     )
-                    Text(text = "          ")
+                    Text(text = "", modifier = Modifier.padding(end = 20.dp))
                 }
             }
         }
